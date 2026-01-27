@@ -73,11 +73,6 @@ public class PetDatabase {
                 break;
             }
 
-            if (pets.size() >= MAX_PETS) {
-                System.out.println("Error: Database is full.");
-                continue;
-            }
-
             String[] parts = input.split("\\s+");
             if (parts.length != 2) {
                 System.out.println("Error: " + input + " is not a valid input.");
@@ -96,6 +91,11 @@ public class PetDatabase {
 
             if (age < MIN_AGE || age > MAX_AGE) {
                 System.out.println("Error: " + age + " is not a valid age.");
+                continue;
+            }
+
+            if (pets.size() >= MAX_PETS) {
+                System.out.println("Error: Database supports only 5 entries.");
                 continue;
             }
 
